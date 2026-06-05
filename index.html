@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjul Yadav | Premium Video Editor & Motion Designer</title>
+    <meta name="description" content="Portfolio of Sanjul Yadav, a professional video editor and motion designer specializing in YouTube edits, commercials, cinematic color grading, and shorts. Available for freelance work.">
+    <meta name="keywords" content="Video Editor, Motion Designer, YouTube Editor, Cinematic Color Grading, Premiere Pro, After Effects, Freelance Video Editor, Sanjul Yadav">
+    <meta name="author" content="Sanjul Yadav">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #030305;
+            --bg-card: #0A0A0F;
+            --bg-nav: rgba(3, 3, 5, 0.75);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.15);
+            --accent-red: #ff3e1d;
+            --accent-blue: #2d5bff;
+            --accent-violet: #8a2be2;
+            --accent-green: #25d366;
+            --accent-insta: #e1306c;
+            --text-main: #f3f4f6;
+            --text-muted: #8e8e98;
+            --text-dark: #4b4b53;
+            --grad-primary: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-blue) 100%);
+            --grad-text: linear-gradient(90deg, #ff3e1d 0%, #ff8c00 45%, #2d5bff 100%);
+            --grad-card-glow: radial-gradient(circle at 50% 0%, rgba(255, 62, 29, 0.15) 0%, transparent 70%);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) var(--bg);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'anton', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo, .num {
+            font-family: 'Anton', sans-serif;
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-red); }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ── NAVIGATION ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: var(--bg-nav);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            background: rgba(3, 3, 5, 0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            box-shadow: 0 0 10px var(--accent-red);
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-red);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--text-main); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.open span:nth-child(2) { opacity: 0; }
+        .menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+        .nav-overlay.show { display: block; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+            gap: 4rem;
+        }
+
+        .ambient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.25;
+        }
+
+        .blob-red {
+            width: 45vw; height: 45vw;
+            background: radial-gradient(circle, var(--accent-red) 0%, transparent 70%);
+            top: -15%; right: -10%;
+            animation: floatBlob 20s infinite alternate;
+        }
+
+        .blob-blue {
+            width: 35vw; height: 35vw;
+            background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+            bottom: -10%; left: 5%;
+            animation: floatBlob 25s infinite alternate-reverse;
+        }
+
+        @keyframes floatBlob {
+            0%   { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.15) translate(5vw, 3vh); }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero-tags-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-tag.red-accent {
+            border-color: rgba(255,62,29,0.3);
+            color: var(--accent-red);
+            background: rgba(255,62,29,0.05);
+        }
+
+        .hero-tag span.dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            display: inline-block;
+        }
+
+        .hero-tag span.dot.blink { animation: pulseBlink 1.5s infinite; }
+
+        @keyframes pulseBlink {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span.gradient-text {
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bio {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 580px;
+            font-weight: 400;
+        }
+
+        .hero-bio strong { color: var(--text-main); font-weight: 600; }
+
+        .btn-group { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+        .btn {
+            position: relative;
+            padding: 1.1rem 2.4rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--bg);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--grad-primary);
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            color: var(--text-main);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,62,29,0.3);
+        }
+
+        .btn-primary:hover::before { opacity: 1; }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-main);
+            background: transparent;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-3px);
+        }
+
+        .btn-arrow { transition: transform 0.3s; }
+        .btn:hover .btn-arrow { transform: translateX(4px); }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-color);
+            max-width: 580px;
+        }
+
+        .stat-item .num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(135deg, #FF3E1D, #2D5BFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-item .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* Hero image */
+        .hero-image-wrap {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img-frame {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1.1;
+            border-radius: 32px;
+            overflow: visible;
+        }
+
+        .hero-img-frame::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 36px;
+            background: var(--grad-primary);
+            z-index: -1;
+            opacity: 0.8;
+            filter: blur(10px);
+            animation: borderPulse 4s infinite alternate;
+        }
+
+        @keyframes borderPulse {
+            0%   { filter: blur(5px); opacity: 0.6; }
+            100% { filter: blur(14px); opacity: 0.95; }
+        }
+
+        .hero-img-inner { 
+            width: 100%;
+            height: 100%;
+            border-radius: 32px;
+            overflow: hidden;
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-img-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: saturate(1.05) contrast(1.05);
+        }
+
+        .hero-img-frame:hover .hero-img-inner img { transform: scale(1.04); }
+
+        /* Float badges */
+        .float-badge {
+            position: absolute;
+            background: rgba(10,10,15,0.7);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            z-index: 10;
+        }
+
+        .badge-status {
+            bottom: 2rem; left: -3rem;
+            animation: floatY 5s ease-in-out infinite;
+        }
+
+        .badge-tools {
+            top: 2rem; right: -2.5rem;
+            animation: floatY 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatY {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-12px); }
+        }
+
+        .float-badge .badge-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .float-badge .badge-val {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .float-badge .badge-dot {
+            width: 8px; height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--accent-green);
+        }
+
+        .tools-row {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 0.4rem;
+        }
+
+        .tools-row img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            transition: var(--transition-bounce);
+        }
+
+        .tools-row img:hover { transform: scale(1.3) rotate(5deg); }
+
+        /* ── PROJECTS ── */
+        .projects { padding: 8rem 0; position: relative; }
+
+        .section-header {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+        }
+
+        .section-title-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .section-title-wrap .sub {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-red);
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .section-title span.gradient-text {
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Filters */
+        .filter-container {
+            padding: 0 5%;
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            padding: 0.6rem 1.6rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .filter-btn:hover { border-color: var(--text-main); color: var(--text-main); }
+
+        .filter-btn.active {
+            background: var(--text-main);
+            color: var(--bg);
+            border-color: var(--text-main);
+            font-weight: 700;
+        }
+
+        /* Slider */
+        .slider-outer { position: relative; padding: 0 5%; overflow: visible; }
+
+        .slider-wrapper {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding-bottom: 3rem;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .slider-wrapper::-webkit-scrollbar { display: none; }
+
+        .slide {
+            min-width: 380px;
+            height: 480px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-bounce);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .slide.hide { display: none; }
+
+        .slide:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: var(--border-hover);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(255,62,29,0.05);
+        }
+
+        .slide-media-wrap { width: 100%; height: 100%; position: relative; overflow: hidden; }
+
+        .slide-media {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide:hover .slide-media {
+            transform: scale(1.08);
+            filter: brightness(0.65) saturate(1.1);
+        }
+
+        .play-indicator {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.6);
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition-bounce);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .play-indicator::before {
+            content: '';
+            width: 0; height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent var(--bg);
+            margin-left: 5px;
+        }
+
+        .slide:hover .play-indicator {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .slide-info {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(3,3,5,0.95) 0%, rgba(3,3,5,0.7) 40%, transparent 100%);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .slide-info h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .slide-info .category {
+            color: var(--accent-red);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .slide-info .details-badge {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Slider controls */
+        .slider-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: flex-end;
+            padding: 0 5%;
+        }
+
+        .slider-btn {
+            width: 54px; height: 54px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .slider-btn:hover {
+            background: var(--text-main);
+            color: var(--bg);
+            border-color: var(--text-main);
+            transform: scale(1.05);
+        }
+
+        /* ── SERVICES ── */
+        .services {
+            padding: 8rem 5%;
+            background: var(--bg-card);
+            position: relative;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(45,91,255,0.08) 0%, transparent 70%);
+            top: 10%; left: -100px;
+            pointer-events: none;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: var(--bg);
+            border-radius: 24px;
+            padding: 3rem 2.2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--grad-card-glow);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,62,29,0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-card:hover::before { opacity: 1; }
+
+        .service-icon-wrap {
+            position: relative;
+            z-index: 2;
+            width: 68px; height: 68px;
+            border-radius: 18px;
+            background: rgba(255,62,29,0.05);
+            border: 1px solid rgba(255,62,29,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .service-icon-wrap img { width: 40px; height: 40px; object-fit: contain; }
+
+        .service-card:hover .service-icon-wrap {
+            background: rgba(255,62,29,0.1);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(255,62,29,0.2);
+        }
+
+        .service-card h3 {
+            position: relative;
+            z-index: 2;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            position: relative;
+            z-index: 2;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ── PROCESS ── */
+        .process-section { padding: 8rem 5%; position: relative; }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px; left: 10%; right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,255,255,0.05) 50%, var(--accent-blue) 100%);
+            z-index: 1;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            transition: var(--transition-bounce);
+        }
+
+        .process-step:hover .step-number {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255,62,29,0.2);
+            background: var(--bg);
+        }
+
+        .process-step:nth-child(even):hover .step-number {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(45,91,255,0.2);
+        }
+
+        .process-step h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+        }
+
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-width: 200px;
+        }
+
+        /* ── CONTACT ── */
+        .contact {
+            padding: 8rem 5%;
+            background-color: var(--bg);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 5rem;
+            margin-top: 4rem;
+            align-items: start;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            max-width: 450px;
+        }
+
+        .contact-cards-stack { display: flex; flex-direction: column; gap: 1rem; }
+
+        .contact-social-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.35s ease;
+        }
+
+        .contact-social-card:hover { transform: translateX(8px); }
+
+        .contact-social-card .left {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .social-icon {
+            width: 52px; height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 14px;
+            flex-shrink: 0;
+        }
+
+        .social-icon img { width: 30px; height: 30px; object-fit: contain; }
+
+        .social-info .platform {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .social-info .handle {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .arrow-icon { font-size: 1.2rem; transition: transform 0.3s ease; color: var(--text-muted); }
+        .contact-social-card:hover .arrow-icon { transform: translate(4px, -4px); color: #fff; }
+
+        .contact-social-card.insta:hover  { border-color: var(--accent-insta); box-shadow: 0 10px 30px rgba(225,48,108,0.2); }
+        .contact-social-card.whatsapp:hover { border-color: var(--accent-green); box-shadow: 0 10px 30px rgba(37,211,102,0.2); }
+        .contact-social-card.email:hover  { border-color: var(--accent-red); box-shadow: 0 10px 30px rgba(255,62,29,0.2); }
+        .contact-social-card.youtube:hover { border-color: #ff0000; box-shadow: 0 10px 30px rgba(255,0,0,0.2); }
+        .contact-social-card.linkedin:hover { border-color: #0077b5; box-shadow: 0 10px 30px rgba(0,119,181,0.2); }
+        .contact-social-card.twitter:hover { border-color: #fff; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+
+        /* Contact Form */
+        .contact-form-wrap {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.7rem;
+            transition: var(--transition);
+        }
+
+        .form-group:focus-within label { color: var(--accent-red); }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-control::placeholder { color: var(--text-muted); }
+
+        .form-control:focus {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 4px rgba(255,62,29,0.12);
+            background: rgba(255,255,255,0.06);
+        }
+
+        select.form-control { cursor: pointer; }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #FF3E1D, #2D5BFF);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.35s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,62,29,0.35);
+        }
+
+        /* ── MULTIPLE VIDEO MODAL ── */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(3,3,5,0.95);
+            backdrop-filter: blur(25px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            padding: 2rem;
+        }
+
+        .modal.open { opacity: 1; pointer-events: all; }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1100px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+            transform: translateY(40px) scale(0.95);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            max-height: 90vh;
+        }
+
+        .modal.open .modal-container {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            z-index: 100;
+            font-family: inherit;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-red);
+            color: #fff;
+            border-color: var(--accent-red);
+            transform: rotate(90deg);
+        }
+
+        /* Left Side: Scrollable Gallery of Videos */
+        .modal-gallery-wrap {
+            background: #000;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            overflow-y: auto;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .modal-gallery-wrap::-webkit-scrollbar { display: none; }
+
+        .modal-video-player-multi {
+            width: 100%;
+            border-radius: 12px;
+            background: #050508;
+            outline: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .modal-thumb-fallback {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* Right Side: Details */
+        .modal-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        .modal-meta-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-red);
+            margin-bottom: 0.8rem;
+        }
+
+        .modal-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .modal-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .meta-item .label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .meta-item .val { font-size: 0.9rem; font-weight: 600; color: var(--text-main); }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 4rem 5%;
+            background-color: var(--bg);
+            border-top: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-logo { justify-self: start; }
+        .footer-copy { justify-self: center; font-weight: 500; }
+        .footer-credits { justify-self: end; display: flex; align-items: center; gap: 0.5rem; }
+        .footer-credits .red { color: var(--accent-red); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 992px) {
+            nav { padding: 1.2rem 5%; }
+
+            .nav-links {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 75%; height: 100vh;
+                background: rgba(10,10,15,0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 3rem;
+                z-index: 999;
+                transition: var(--transition);
+                border-left: 1px solid var(--border-color);
+            }
+
+            .nav-links.open { right: 0; }
+            .menu-toggle { display: flex; }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 9rem;
+                gap: 5rem;
+            }
+
+            .hero-image-wrap { order: -1; }
+            .hero-tags-row { justify-content: center; }
+            .hero-bio { margin: 0 auto 3rem; }
+            .btn-group { justify-content: center; }
+            .hero-stats { margin: 4rem auto 0; }
+
+            .badge-status { left: 1rem; bottom: -2rem; }
+            .badge-tools  { right: 1rem; top: -2rem; }
+
+            .process-timeline { grid-template-columns: 1fr; gap: 4rem; }
+            .process-timeline::before { display: none; }
+            .process-step { flex-direction: row; text-align: left; gap: 2rem; align-items: center; }
+            .step-number { margin-bottom: 0; min-width: 80px; }
+            .process-step p { max-width: 100%; }
+
+            .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+
+            .modal-container {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .modal-gallery-wrap {
+                min-height: 300px;
+                max-height: 400px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .modal-content { padding: 2rem; }
+
+            footer {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 3rem 5%;
+            }
+
+            .footer-logo, .footer-copy, .footer-credits { justify-self: center; }
+        }
+
+        @media (max-width: 576px) {
+            .hero { padding-top: 8rem; gap: 4rem; }
+            .hero h1 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+            .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+            .slide { min-width: 290px; height: 400px; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .contact-form-wrap { padding: 1.8rem 1.4rem; }
+            .form-row-2 { grid-template-columns: 1fr; gap: 0; }
+            .modal { padding: 1rem; }
+            .modal-close { top: 1rem; right: 1rem; width: 45px; height: 45px; font-size: 1rem; }
+            .modal-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-blob blob-red"></div>
+    <div class="ambient-blob blob-blue"></div>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <nav id="navbar">
+        <a href="#home" class="logo">SANJUL YADAV</a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home"     class="nav-item active">Home</a>
+            <a href="#projects" class="nav-item">Portfolio</a>
+            <a href="#services" class="nav-item">Services</a>
+            <a href="#process"  class="nav-item">Workflow</a>
+            <a href="#contact"  class="nav-item">Contact</a>
+        </div>
+
+        <a href="#contact" class="btn btn-primary" style="display:none;" id="navCta">Let's Create</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-tags-row">
+                <div class="hero-tag red-accent">
+                    <span class="dot blink"></span>
+                    Available for Freelance
+                </div>
+                <div class="hero-tag red-accent">
+                    <span class="dot blink"></span>
+                    Video Editor &amp; Motion Designer
+                </div>
+            </div>
+
+            <h1>
+                Crafting<br>
+                <span class="gradient-text">Stories</span><br>
+                That <span class="gradient-text">Move</span>
+            </h1>
+
+            <p class="hero-bio">
+                Hi, I'm <strong>Sanjul Yadav</strong>. A video editor and designer who transforms raw footage into compelling visual narratives. I specialize in high-impact YouTube edits, corporate commercials, engaging social reels, and dynamic motion sequences. I blend intentional pacing, cinematic color grading, and custom sound design to ensure every frame serves the story.
+            </p>
+
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">View My Work <span class="btn-arrow">→</span></a>
+                <a href="#contact"  class="btn btn-outline">Let's Talk</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="num">50+</div>
+                    <div class="label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">4+</div>
+                    <div class="label">Years of Exp.</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">4.9★</div>
+                    <div class="label">Client Rating</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-wrap">
+            <div class="hero-img-frame">
+                <div class="hero-img-inner">
+                    <img src="Designes/landscape_editor_art.jpg" alt="Sanjul Yadav Creative Workspace">
+                </div>
+                <div class="float-badge badge-status">
+                    <div class="badge-label">Status</div>
+                    <div class="badge-val">
+                        <span class="badge-dot"></span> Active
+                    </div>
+                </div>
+                <div class="float-badge badge-tools">
+                    <div class="badge-label">Expertise</div>
+                    <div class="tools-row">
+                        <img src="Designes/download-removebg-preview.png"    alt="Premiere Pro"   title="Premiere Pro">
+                        <img src="Designes/download-removebg-preview (3).png" alt="After Effects" title="After Effects">
+                        <img src="Designes/download-removebg-preview (2).png" alt="Photoshop"     title="Photoshop">
+                        <img src="Designes/download-removebg-preview (4).png" alt="Illustrator"   title="Illustrator">
+                        <img src="Designes/download-removebg-preview (5).png" alt="DaVinci"       title="DaVinci Resolve">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <div class="section-title-wrap">
+                <span class="sub">My Showcase</span>
+                <h2 class="section-title">Selected <span class="gradient-text">Projects</span></h2>
+            </div>
+            <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:2px; font-weight:600;">Swipe or explore below</span>
+        </div>
+
+        <div class="filter-container"> 
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="youtube">YouTube Edits</button>
+            <button class="filter-btn" data-filter="reels">Shorts &amp; Reels</button>
+            <button class="filter-btn" data-filter="cinematic">Cinematic &amp; Grading</button>
+            <button class="filter-btn" data-filter="graphics">Motion Graphics</button>
+        </div>
+
+        <div class="slider-outer">
+ <div class="slider-outer">
+            <div class="slider-wrapper" id="portfolioSlider">
+                
+                <div class="slide" data-category="cinematic"
+                     data-title="Music Video Edit" 
+                     data-client="Independent Artist"
+                     data-tools="Premiere Pro, DaVinci Resolve"
+                     data-category-label="Cinematic"
+                     data-desc="A full-length music video project featuring stylized high-contrast grade, matching rhythmic beat cuts, and custom film grain overlays to create a raw, narrative music visual."
+                     data-thumb="Designes/music-video.jpeg"
+                     data-videos="Designes/lv_0_20260522183405.mp4">                                     
+                    <div class="slide-media-wrap">
+                        <img src="Designes\WhatsApp Image 2026-06-04 at 12.50.10.jpeg" class="slide-media" alt="Music Video">
+                        <div class="play-indicator"></div>
+                    </div>
+                    <div class="slide-info">
+                        <span class="category">Cinematic</span>
+                            <h3>Music Video Edit</h3>                        
+                        <div class="details-badge">Color Grade &amp; Pacing</div>
+                    </div>               
+                </div>
+
+                <div class="slide" data-category="cinematic"
+                     data-title="Brand Commercial"
+                     data-client="Vogue Motion Labs"
+                     data-tools="Premiere Pro, After Effects"
+                     data-category-label="Commercial"
+                     data-desc="Modern advertising content developed for social channels. The project focuses on sound design sync, crisp typography tracking, and smooth velocity ramp transitions."
+                     data-thumb="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800"
+                     data-videos="Designes/lv_7577441241760091409_20260510113840.mp4">
+                    <div class="slide-media-wrap">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800" class="slide-media" alt="Brand Commercial">
+                        <div class="play-indicator"></div>
+                    </div>
+                    <div class="slide-info">
+                        <span class="category">Commercial</span>
+                        <h3>Brand Commercial</h3>
+                        <div class="details-badge">Sound Sync &amp; FX</div>
+                    </div>
+                </div>
+
+                <div class="slide" data-category="graphics"
+                     data-title="Abstract Motion Typography"
+                     data-client="Self Campaign"
+                     data-tools="After Effects, Illustrator"
+                     data-category-label="Motion Graphics"
+                     data-desc="Dynamic 2D shape animation and abstract text reveals designed for promotional openers. Highlights modular layout blocks, fast-paced keyframe adjustments, and vector renders."
+                     data-thumb="https://img.magnific.com/free-photo/digital-art-style-illustration-graphic-designer_23-2151536974.jpg?semt=ais_hybrid&w=740&q=80"
+                     data-videos="Designes/lv_7542822865616375093_20260510115222.mp4">
+                    <div class="slide-media-wrap">
+                        <img src="https://img.magnific.com/free-photo/digital-art-style-illustration-graphic-designer_23-2151536974.jpg?semt=ais_hybrid&w=740&q=80" class="slide-media" alt="Motion Graphics">
+                        <div class="play-indicator"></div>
+                    </div>
+                    <div class="slide-info">
+                        <span class="category">Motion Graphics</span>
+                        <h3>Promo Animations</h3>
+                        <div class="details-badge">After Effects Keyframes</div>
+                    </div>
+                </div>
+
+                <div class="slide" data-category="reels"
+                     data-title="Viral Reels System"
+                     data-client="Fitness Influencer X"
+                     data-tools="Premiere Pro, Photoshop"
+                     data-category-label="Shorts &amp; Reels"
+                     data-desc="Retention-focused short clips built for maximum scroll-stopping power. Features micro-zooms, automated kinetic text captions, visual meme overlays, and energetic sound design."
+                     data-thumb="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=800"
+                     data-videos="Designes/lv_7542822865616375093_20260510115222.mp4">
+                    <div class="slide-media-wrap">
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=800" class="slide-media" alt="Viral Reels">
+                        <div class="play-indicator"></div>
+                    </div>
+                    <div class="slide-info">
+                        <span class="category">Shorts &amp; Reels</span>
+                        <h3>Viral Reels System</h3>
+                        <div class="details-badge">Engagement &amp; Retention Edit</div>
+                    </div>
+                </div>
+
+                <div class="slide" data-category="youtube"
+                     data-title="Creator Longform"
+                     data-client="Creator Hub"
+                     data-tools="Premiere Pro, Photoshop, Lightroom"
+                     data-category-label="YouTube Edit"
+                     data-desc="Professional long-form video formatting involving structural story blocks, seamless soundscape integration, zoom ramping, and detailed asset layout grids."
+                     data-thumb="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800"
+                     data-videos="Designes/lv_7542822865616375093_20260510115222.mp4">
+                    <div class="slide-media-wrap">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800" class="slide-media" alt="YouTube Essay">
+                        <div class="play-indicator">
+                        </div>
+                    </div>
+                    <div class="slide-info">                        
+                        <span class="category">YouTube Edit</span>
+                        <h3>Creator Longform</h3>
+                        <div class="details-badge">Pacing &amp; Narrative Flow</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="slider-btn" id="sliderPrev" aria-label="Previous">←</button>
+            <button class="slider-btn" id="sliderNext" aria-label="Next">→</button>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-title-wrap" style="align-items:center; text-align:center;">
+            <span class="sub">My Expertise</span>
+            <h2 class="section-title">What I <span class="gradient-text">Offer</span></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon-wrap"> 
+                    
+                    <img src="Designes/download-removebg-preview.png" alt="Video Editing"style="width: 100px;">
+                 
+                </div>
+                <h3>Video Editing</h3>
+                <p>High-fidelity editing and pacing tailored to your specific platforms. From engaging corporate narratives to retention-focused YouTube formats.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <img src="Designes/download-removebg-preview (5).png" alt="Color Grading" style="width: 100px;">
+                </div>
+                <h3>Color Grading</h3>
+                <p>Bringing visual consistency and mood correction to flat LOG profiles. Cinematic exposure balancing, look matching, and vibrant tone styling.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <img src="Designes/download-removebg-preview (1).png" alt="Motion Graphics" style="width: 100px;">
+                </div>
+                <h3>Motion Graphics</h3>
+                <p>Enhancing stories with dynamic text reveals, bespoke title lower thirds, logo intros, transitions, and clean illustrative animation blocks.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <img src="Designes/images.png" alt="Social Media" style="width: 100px;">
+                </div>
+                <h3>Reels &amp; Short Form</h3>
+                <p>Hook-driven optimization for Instagram Reels, YouTube Shorts, and TikTok campaigns. Maximizing retention with kinetic captions, sound effects, and zooms.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <img src="Designes/landscape_editor_art.jpg" alt="All Content Types">
+                </div>
+                <h3>Edit &amp; Create Any Content</h3>
+                <p>Podcast, Viral, Reels, Events, Travel, Cinematic, YouTube Shorts, Marketing, Fashion, Social, Longform, Documentary, Real Estate, Promo, Traditional &amp; Creative edits.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-section">
+        <div class="section-title-wrap" style="align-items:center; text-align:center;">
+            <span class="sub">My Blueprint</span>
+            <h2 class="section-title">How I <span class="gradient-text">Work</span></h2>
+        </div>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div>
+                    <h4>Concept &amp; Script</h4>
+                    <p>Aligning on the project brief, references, structure layout, and narrative checkpoints.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div>
+                    <h4>Assembly &amp; Cut</h4>
+                    <p>Organizing footage, syncing multi-cams or sound, and creating the initial structural pacing timeline.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div>
+                    <h4>Audio &amp; Polish</h4>
+                    <p>Integrating sound effects, background audio leveling, voiceovers, zoom transitions, and subtitle triggers.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div>
+                    <h4>Color &amp; Grade</h4>
+                    <p>Balancing colors, creating thematic grades, and adding overlays to establish the desired cinematic mood.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">05</div>
+                <div>
+                    <h4>Render &amp; Delivery</h4>
+                    <p>Exporting high-quality renders optimized for specific platforms, followed by final review loops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-grid">
+            <div class="contact-details">
+                <div class="section-title-wrap">
+                    <span class="sub">Connect With Me</span>
+                    <h2 class="section-title">Let's Create <span style="color:var(--accent-red)">Something</span> Cool</h2>
+                </div>
+                <p>Have an upcoming project, freelance inquiry, or just want to chat about editing? Drop me a line directly or through my social cards. I usually respond within 12 hours.</p>
+
+                <div class="contact-cards-stack">
+                    <a href="https://www.instagram.com/sai_ediition/" target="_blank" rel="noopener" class="contact-social-card insta">
+                        <div class="left">
+                            <div class="social-icon"><img src="Designes/download-removebg-preview (10).png" alt="Instagram" style="width: 45px;"></div>
+                            <div class="social-info">
+                                <div class="platform">Instagram</div>
+                                <div class="handle">@SAI_EDIITION</div>
+                            </div>
+                        </div>
+                        <div class="arrow-icon">↗</div>
+                    </a>
+
+                    <a href="https://wa.me/918085164272" target="_blank" rel="noopener" class="contact-social-card whatsapp">
+                        <div class="left">
+                            <div class="social-icon"><img src="Designes/download-removebg-preview (6).png" alt="WhatsApp" style="width: 45px;"></div>
+                            <div class="social-info">
+                                <div class="platform">WhatsApp</div>
+                                <div class="handle">+91 8085164272</div>
+                            </div>
+                        </div>
+                        <div class="arrow-icon">↗</div>
+                    </a>
+
+                    <a href="mailto:sanjulyadav302@gmail.com" class="contact-social-card email">
+                        <div class="left">
+                            <div class="social-icon"><img src="Designes/e-mail-removebg-preview.png" alt="Email" style="width: 45px;"></div>
+                            <div class="social-info">
+                                <div class="platform">Email</div>
+                                <div class="handle">sanjulyadav302@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="arrow-icon">↗</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/@SAI_EDIITION" target="_blank" rel="noopener" class="contact-social-card youtube">
+                        <div class="left">
+                            <div class="social-icon"><img src="Designes/download-removebg-preview (9).png" alt="YouTube"></div>
+                            <div class="social-info">
+                                <div class="platform">YouTube</div>
+                                <div class="handle">SAI_EDIITION</div>
+                            </div>
+                        </div>
+                        <div class="arrow-icon">↗</div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/sanjul-yadav/" target="_blank" rel="noopener" class="contact-social-card linkedin">
+                        <div class="left">
+                            <div class="social-icon"><img src="Designes/download-removebg-preview (7).png" alt="LinkedIn"style="width: 45px;"></div>
+                            <div class="social-info">
+                                <div class="platform">LinkedIn</div>
+                                <div class="handle">sanjul yadav</div>
+                            </div>
+                        </div>
+                        <div class="arrow-icon">↗</div>
+                    </a>
+
+                    <a href="https://x.com/Yadav_sanjul302" target="_blank" rel="noopener" class="contact-social-card twitter">
+                        <div class="left">
+                            <div class="social-icon"><img src="Designes/download-removebg-preview (8).png" alt="Twitter"style="width: 45px;"></div>
+                            <div class="social-info">
+                                <div class="platform">Twitter / X</div>
+                                <div class="handle">@Yadav_sanjul302</div>
+                            </div>
+                        </div>
+                        <div class="arrow-icon">↗</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap">
+                <form id="contactForm">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Project Category</label>
+                        <select id="subject" class="form-control">
+                            <option value="">Select a category...</option>
+                            <option value="youtube">YouTube Video Editing</option>
+                            <option value="reels">TikTok / Reels Short Form</option>
+                            <option value="commercial">Brand Commercial</option>
+                            <option value="motion">Motion Graphics &amp; Intro</option>
+                            <option value="other">Other Creative Work</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" class="form-control" placeholder="Tell me about your footage, length, style, and goals..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        Send Message <span>✈️</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="projectModal" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+            <div class="modal-gallery-wrap" id="modalVideoGallery">
+                </div>
+
+            <div class="modal-content">
+                <div>
+                    <span class="modal-meta-tag" id="modalMetaCategory">Cinematic</span><p>scroll down for more videos </p>
+                    <h3 class="modal-title"     id="modalTitle">Project Title</h3>
+                    <p class="modal-desc"       id="modalDesc">Project description goes here.</p>
+                </div>
+                <div class="modal-details-grid">
+                    <div class="meta-item">
+                        <div class="label">Client </div>
+                        <div class="val" id="modalMetaClient">—</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="label">Tools Used</div>
+                        <div class="val" id="modalMetaTools">—</div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://www.youtube.com/@SAI_EDIITION" class="footer-logo logo">SAI_EDIITION</a>
+        <span class="footer-copy">© 2026 Sanjul Yadav. All rights reserved.</span>
+        <div class="footer-credits">
+            <span>Made for Creators with</span>
+            <span class="red">❤️</span>
+            <span>&amp;</span>
+            <span>🎬</span>
+        </div>
+    </footer>
+
+    <script>
+    // ── Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ── Mobile menu toggle
+    const menuToggle  = document.getElementById('menuToggle');
+    const navLinks    = document.getElementById('navLinks');
+    const navOverlay  = document.getElementById('navOverlay');
+
+    function closeMenu() {
+        menuToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+        navOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.classList.toggle('open', isOpen);
+        navOverlay.classList.toggle('show', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // ── Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navItems.forEach(a => a.classList.remove('active'));
+                const active = document.querySelector(`.nav-item[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => observer.observe(s));
+
+    // ── Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const slides      = document.querySelectorAll('.slide');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            slides.forEach(slide => {
+                const cat = slide.dataset.category;
+                if (filter === 'all' || cat === filter) {
+                    slide.classList.remove('hide');
+                } else {
+                    slide.classList.add('hide');
+                }
+            });
+        });
+    });
+
+    // ── Slider arrow controls
+    const slider   = document.getElementById('portfolioSlider');
+    const btnPrev  = document.getElementById('sliderPrev');
+    const btnNext  = document.getElementById('sliderNext');
+    const STEP     = 400;
+
+    btnNext.addEventListener('click', () => { slider.scrollLeft += STEP; });
+    btnPrev.addEventListener('click', () => { slider.scrollLeft -= STEP; });
+
+    // ── Modal & Multiple Video Logic ──
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.getElementById('modalClose');
+    const gallery = document.getElementById('modalVideoGallery');
+
+    function openModal(slide) {
+        // Populate text details
+        document.getElementById('modalTitle').textContent       = slide.dataset.title        || '';
+        document.getElementById('modalDesc').textContent        = slide.dataset.desc         || '';
+        document.getElementById('modalMetaCategory').textContent= slide.dataset.categoryLabel|| slide.dataset.category || '';
+        document.getElementById('modalMetaClient').textContent  = slide.dataset.client       || '—';
+        document.getElementById('modalMetaTools').textContent   = slide.dataset.tools        || '—';
+
+        // Clear existing videos from the modal gallery
+        gallery.innerHTML = ''; 
+
+        // Generate Video Players dynamically from 'data-videos' separated by commas
+        const videosStr = slide.dataset.videos || '';
+        if (videosStr) {
+            const videoUrls = videosStr.split(',');
+            videoUrls.forEach(url => {
+                if (url.trim()) {
+                    const videoEl = document.createElement('video');
+                    videoEl.src = url.trim();
+                    videoEl.controls = true;
+                    videoEl.className = 'modal-video-player-multi';
+                    gallery.appendChild(videoEl);
+                }
+            });
+        } else {
+            // Fallback: If no videos, just show the thumbnail image
+            const imgEl = document.createElement('img');
+            imgEl.src = slide.dataset.thumb || '';
+            imgEl.className = 'modal-thumb-fallback';
+            gallery.appendChild(imgEl);
+        }
+
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        
+        // Wipe the gallery to stop all videos currently playing
+        gallery.innerHTML = '';
+    }
+
+    slides.forEach(slide => slide.addEventListener('click', () => openModal(slide)));
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // ── Contact form submit
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.submit-btn');
+        const orig = btn.innerHTML;
+        btn.innerHTML = 'Message Sent! ✅';
+        btn.style.background = 'linear-gradient(135deg,#25d366,#128c7e)';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.disabled = false;
+            this.reset();
+        }, 3500);
+    });
+    </script>
+</body>
+</html>
